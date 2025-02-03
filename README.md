@@ -54,6 +54,30 @@ To run the project locally, follow these steps:
 
 ### Steps
 1. Clone the repository:
-   ```bash
    git clone https://github.com/yourusername/heart-disease-prediction.git
    cd heart-disease-prediction
+2. Install dependencies:
+   pip install -r requirements.txt
+3. Run the Flask app:
+   python app.py
+4. Open your browser and go to:
+   http://127.0.0.1:5000/
+
+## 🛠 Technologies Used
+- **Programming Language**: Python
+- **Framework**: Flask
+- **Machine Learning**: scikit-learn
+- **Frontend**: HTML, CSS
+- **Visualization**: Seaborn, Matplotlib
+
+## 👥 Contributors
+| Name             | Email                       |
+|------------------|-----------------------------|
+| **Adnan Faisal** | ajfaisal1208023@gmail.com   |
+| **Shiti Chowdhury** | shitichowdhury21@gmail.com |
+
+## 📝 License
+This project is licensed under the **MIT License**.
+
+![License](https://img.shields.io/badge/License-MIT-green)
+
