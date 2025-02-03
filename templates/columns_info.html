@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Heart Disease Columns Info</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: url("/static/background.jpg") no-repeat center center fixed;
+        background-size: cover;
+        color: white;
+        line-height: 1.6;
+      }
+
+      .container {
+        max-width: 900px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 10px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+      }
+
+      h1,
+      h2 {
+        text-align: center;
+        color: #ffcccb;
+      }
+
+      h3 {
+        margin-top: 20px;
+        color: #ffd700;
+      }
+
+      ul {
+        margin: 10px 0 20px 20px;
+      }
+
+      li {
+        margin-bottom: 8px;
+      }
+
+      .section {
+        border-top: 1px solid #444;
+        padding-top: 20px;
+        margin-top: 20px;
+      }
+
+      .highlight {
+        color: #00fa9a;
+      }
+
+      .nav-link {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        background-color: #ff6666;
+        color: white;
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        font-size: 16px;
+        font-weight: bold;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .nav-link:hover {
+        background-color: #e60000;
+        text-decoration: none;
+    }
+    </style>
+  </head>
+  <body>
+    <a href="/" class="nav-link">Back to Home</a>
+
+    <div class="container">
+      <h1>Heart Disease Prediction - Input Parameters</h1>
+      <h2>Summary of Tests Needed</h2>
+      <ul>
+        <li><span class="highlight">No Tests Required:</span> Age, Sex</li>
+        <li>
+          <span class="highlight">Basic Tests:</span> Blood Pressure, Fasting
+          Blood Sugar
+        </li>
+        <li>
+          <span class="highlight">Specialized Tests:</span> ECG (Resting and
+          Stress), Cholesterol Test, Exercise Stress Test, Angiography or
+          Fluoroscopy, Thalassemia Screening
+        </li>
+      </ul>
+
+      <div class="section">
+        <h3>1. Age</h3>
+        <ul>
+          <li>
+            <strong>What it Means:</strong> The age of the patient in years.
+          </li>
+          <li>
+            <strong>How to Determine:</strong> This is the patient’s current
+            age. No special test is needed.
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>2. Sex</h3>
+        <ul>
+          <li><strong>What it Means:</strong> Gender of the patient.</li>
+          <li><strong>Categories:</strong> 0 = Female, 1 = Male</li>
+          <li>
+            <strong>How to Determine:</strong> Based on the patient’s biological
+            sex as per medical records.
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>3. Chest Pain Type (cp)</h3>
+        <ul>
+          <li>
+            <strong>What it Means:</strong> Describes the type of chest pain
+            experienced.
+          </li>
+          <li>
+            <strong>Categories:</strong>
+            <ul>
+              <li>
+                0: Typical angina (chest pain related to exertion, relieved by
+                rest or medication)
+              </li>
+              <li>
+                1: Atypical angina (chest discomfort not typical for angina)
+              </li>
+              <li>
+                2: Non-anginal pain (pain not related to heart conditions)
+              </li>
+              <li>3: Asymptomatic (no chest pain)</li>
+            </ul>
+          </li>
+          <li>
+            <strong>How to Determine:</strong> A doctor determines this based on
+            symptoms and patient history.
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>4. Resting Blood Pressure (trestbps)</h3>
+        <ul>
+          <li>
+            <strong>What it Means:</strong> Blood pressure measured while at
+            rest, expressed in mmHg.
+          </li>
+          <li>
+            <strong>How to Determine:</strong> Measured using a blood pressure
+            cuff and monitor in a clinic.
+          </li>
+          <li class="examples">
+            <strong>Examples:</strong>
+            <ul>
+              <li><span class="highlight">Normal:</span> 120/80 mmHg</li>
+              <li>
+                <span class="highlight">Hypertension:</span> 140/90 mmHg or
+                higher
+              </li>
+              <li>
+                <span class="highlight">Hypotension:</span> Less than 90/60 mmHg
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>5. Serum Cholesterol (chol)</h3>
+        <ul>
+          <li>
+            <strong>What it Means:</strong> The total cholesterol level in the
+            blood, measured in mg/dl.
+          </li>
+          <li>
+            <strong>How to Determine:</strong> A blood test is required,
+            typically after fasting for 8-12 hours.
+          </li>
+          <li class="examples">
+            <strong>Examples:</strong>
+            <ul>
+              <li>
+                <span class="highlight">Desirable:</span> Less than 200 mg/dl
+              </li>
+              <li>
+                <span class="highlight">High:</span> Greater than 240 mg/dl
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>6. Fasting Blood Sugar (fbs)</h3>
+        <ul>
+          <li>
+            <strong>What it Means:</strong> Indicates if fasting blood sugar is
+            normal or elevated.
+          </li>
+          <li>
+            <strong>Categories:</strong>
+            <ul>
+              <li>
+                <span class="highlight">0:</span> Below 120 mg/dl (Normal)
+              </li>
+              <li><span class="highlight">1:</span> Above 120 mg/dl (High)</li>
+            </ul>
+          </li>
+          <li>
+            <strong>How to Determine:</strong> Blood test after fasting for 8-12
+            hours.
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>7. Resting Electrocardiographic Results (restecg)</h3>
+        <ul>
+          <li>
+            <strong>What it Means:</strong> Results of an ECG performed at rest.
+          </li>
+          <li>
+            <strong>Categories:</strong>
+            <ul>
+              <li><span class="highlight">0:</span> Normal</li>
+              <li><span class="highlight">1:</span> ST-T wave abnormality</li>
+              <li>
+                <span class="highlight">2:</span> Probable or definite left
+                ventricular hypertrophy
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>How to Determine:</strong> An ECG test performed by a
+            doctor.
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>8. Maximum Heart Rate Achieved (thalach)</h3>
+        <ul>
+          <li>
+            <strong>What it Means:</strong> The highest heart rate achieved
+            during exercise or stress testing.
+          </li>
+          <li>
+            <strong>How to Determine:</strong> Measured during a stress test.
+          </li>
+          <li class="examples">
+            <strong>Example:</strong>
+            <ul>
+              <li>
+                For a 50-year-old, the maximum heart rate is approximately
+                <span class="highlight">170 bpm</span>.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>9. Exercise Induced Angina (exang)</h3>
+        <ul>
+          <li>
+            <strong>What it Means:</strong> Indicates whether the patient
+            experiences chest pain during physical activity:
+          </li>
+          <li>
+            <strong>Categories:</strong>
+            <ul>
+              <li>0: No angina</li>
+              <li>1: Angina (chest pain)</li>
+            </ul>
+          </li>
+          <li>
+            <strong>How to Determine:</strong> Assessed during an exercise
+            stress test by a doctor.
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>
+          10. ST Depression Induced by Exercise Relative to Rest (oldpeak)
+        </h3>
+        <ul>
+          <li>
+            <strong>What it Means:</strong> Measures the difference in the ST
+            segment of an ECG between rest and exercise, indicating heart
+            stress.
+          </li>
+          <li>
+            <strong>How to Determine:</strong> Measured during an exercise ECG
+            test.
+          </li>
+          <li>
+            <strong>Examples:</strong>
+            <ul>
+              <li><strong>Normal Value:</strong> No significant depression.</li>
+              <li>
+                <strong>Abnormal Value:</strong> ST depression of 1.5 mm or
+                greater may indicate coronary artery disease or other heart
+                problems.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>11. Slope of the Peak Exercise ST Segment (slope)</h3>
+        <ul>
+          <li>
+            <strong>What it Means:</strong> Indicates the slope of the ST
+            segment during peak exercise.
+          </li>
+          <li>
+            <strong>Categories:</strong>
+            <ul>
+              <li>0: Upsloping (less concerning)</li>
+              <li>1: Flat (moderate risk)</li>
+              <li>2: Downsloping (higher risk)</li>
+            </ul>
+          </li>
+          <li>
+            <strong>How to Determine:</strong> Determined during an exercise ECG
+            test by a cardiologist.
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>12. Number of Major Vessels Colored by Fluoroscopy (ca)</h3>
+        <ul>
+          <li>
+            <strong>What it Means:</strong> Indicates the number of major blood
+            vessels (0–3) visible during fluoroscopy (an imaging technique).
+          </li>
+          <li>
+            <strong>How to Determine:</strong> Performed during an angiography
+            or fluoroscopy procedure where contrast dye is injected, and images
+            are taken.
+          </li>
+          <li>
+            <strong>Examples:</strong>
+            <ul>
+              <li><strong>0:</strong> No major vessels blocked.</li>
+              <li>
+                <strong>1–3:</strong> Indicates the number of major vessels with
+                reduced blood flow.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+
+      <div class="section">
+        <h3>13. Thalassemia (thal)</h3>
+        <ul>
+          <li>
+            <strong>What it Means:</strong> A genetic blood disorder detected
+            via tests.
+          </li>
+          <li>
+            <strong>Categories:</strong>
+            <ul>
+              <li>0: Normal</li>
+              <li>1: Fixed defect (permanent heart damage)</li>
+              <li>2: Reversible defect (temporary heart issues)</li>
+            </ul>
+          </li>
+          <li>
+            <strong>How to Determine:</strong> Diagnosed using specialized blood
+            tests, such as a hemoglobin electrophoresis test.
+          </li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

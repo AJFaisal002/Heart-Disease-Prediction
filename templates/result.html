@@ -9,41 +9,64 @@
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: black;
+            background-image: url('/static/background.jpg'); /* Background */
             background-size: cover;
-        }
-
-        h1, p {
-            text-align: center;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
             color: white;
         }
 
-        .info-container {
+        .result-container {
             max-width: 600px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.2);
-            border-radius: 10px;
+            width: 80%;
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent black box */
+            border-radius: 15px;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.6);
+            text-align: center; /* Ensures all text is centered inside the box */
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin: 0; /* Ensures no extra spacing above/below the heading */
+            padding: 10px 0; /* Adds spacing within the box */
+        }
+
+        p {
+            font-size: 18px;
+            line-height: 1.8;
+            margin: 0; /* Prevents unnecessary margins */
+            word-wrap: break-word; /* Ensures text wraps inside the container */
+        }
+
+        .healthy {
+            color: #4CAF50; /* Green for healthy */
+        }
+
+        .disease {
+            color: #FF4C4C; /* Red for heart disease */
         }
     </style>
 </head>
 <body>
-    <h1>Heart Disease Prediction Result</h1>
-    <div class="info-container">
-        {% if result == 0 %}
-            <p>
-                Great news! No heart disease has been detected. You're healthy.
-                It's important to maintain a healthy lifestyle with regular exercise,
-                a balanced diet, and regular health check-ups.
-            </p>
-        {% else %}
-            <p>
-                Unfortunately, heart disease has been detected. It's crucial to take
-                precautions and consult with a healthcare professional. Consider making
-                lifestyle changes such as adopting a heart-healthy diet, regular exercise,
-                and managing stress. Early detection and proper management can improve outcomes.
-            </p>
-        {% endif %}
+    <div class="result-container">
+        <h1>Heart Disease Prediction Result</h1>
+        <p>
+            {% if result == 0 %}
+                <span class="healthy">Great news! No heart disease has been detected. You're healthy.</span>
+                Maintain a healthy lifestyle with regular exercise, a balanced diet, and regular health check-ups.
+            {% else %}
+                <span class="disease">Unfortunately, heart disease has been detected.</span>
+                Consult a healthcare professional and consider adopting a heart-healthy diet, regular exercise, and stress management. Early detection and proper management can improve outcomes.
+            {% endif %}
+        </p>
     </div>
 </body>
 </html>
